@@ -51,6 +51,7 @@ local function getCurrentConfig() return string.format("%s%s%s", tostring(getgen
 --local last_call = tick()
 local lastConfig = getCurrentConfig()
 local function decompile(s)
+	print("decomp")
 	local typeof_s = typeof(s)
 	if typeof_s ~= "Instance" and typeof_s ~= "string" and typeof_s ~= "function" then return `-- Failed to decompile script, error:\n\n--[[\nexpected Instance, string or Function, got {typeof_s}\n--]]` end
 
@@ -78,6 +79,7 @@ local function decompile(s)
 	--local time_elapsed = tick() - last_call
 	--if time_elapsed <= 0.5 then task.wait(0.5 - time_elapsed) end
 	local currentConfig = getCurrentConfig()
+	print("call")
 	local response = request({
 		Url = "https://starhub.dev/api/v1/decompile",
 		Body = HttpService:JSONEncode({
