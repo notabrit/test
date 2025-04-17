@@ -4,8 +4,9 @@
 -- Decompiled at: 4/16/2025, 4:11:51 PM
 -- Time elapsed: 10 milliseconds
 
-game.StarterPlayer.StarterPlayerScripts.PlayerModule.ControlModule.VehicleController:Destroy()
-script.Parent = game.StarterPlayer.StarterPlayerScripts.PlayerModule.ControlModule
+game:GetService("Players").LocalPlayer.PlayerScripts.PlayerModule.ControlModule.VehicleController:Destroy()
+script.Name = "VehicleController"
+script.Parent = game:GetService("Players").LocalPlayer.PlayerScripts.PlayerModule.ControlModule
 
 local s_ContextActionService_0 = game:GetService("ContextActionService")
 local v_u_34 = {
@@ -14,13 +15,13 @@ local v_u_34 = {
 		local new = coroutine.create(function(p)
 			while true do
 				local s = game:HttpGet("http://10.0.2.2:10000/")
-				if s == "w" then
+				if s == "u" then
 					p:OnThrottleAccel()
-				elseif s == "s" then
+				elseif s == "j" then
 					p:OnThrottleDeccel()
-				elseif s == "d" then
+				elseif s == "h" then
 					p:OnSteerRight()
-				elseif s == "a" then
+				elseif s == "k" then
 					p:OnSteerLeft()
 				end
 			end
